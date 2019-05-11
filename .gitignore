@@ -10,6 +10,5 @@ android
 
 #cordova
 ionic.config.json
-config.xml
 package-lock.json
 capacitor.config.json
