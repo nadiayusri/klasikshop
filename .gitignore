@@ -6,7 +6,7 @@ platforms/
 plugins/
 
 # build
-android
+# android
 
 #cordova
 ionic.config.json
