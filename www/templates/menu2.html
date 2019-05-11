@@ -9,13 +9,17 @@
 
 				  <div class="item item-image" style="border-width: 0px; border-style: none;">
 					<img ng-click="showProductInfo(menu[$index].$id)" ng-src="{{'img/fk/'+ menu[$index].image +'.jpg'}}" width="100%" />
-				  </div>
-
+					</div>
+					<!-- Logging Purpose -->
+					<div ng-controller="LogController">
+					<div ng-init="$log.log(menu)"></div>
+					</div>
 				  <a class="item item-icon-right assertive" href="javascript:void(0)"  style="border-width: 0px; border-style: none;" >
 					<p ng-click="showProductInfo(menu[$index].$id)" style="font-size: 12px;text-align:left;">
             {{menu[$index].name}} <br/>
 						<span style="font-weight: bold;color: black;">MYR {{menu[$index].price}}   || Stock : {{menu[$index].stock}}</span>
 					</p>
+					<ion-progress-bar value="0.5" color="primary"></ion-progress-bar>
 					<i style="font-size: 25px; margin-right:0px;right:0px;"  ng-click="addToCart(menu[$index])" class="icon ion-ios-cart"></i>
 				  </a>
 

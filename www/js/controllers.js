@@ -1,5 +1,11 @@
 angular.module('app.controllers', [])
 
+  // for log controller
+  .controller('LogController', ['$scope', '$log', function ($scope, $log) {
+    $scope.$log = $log;
+    $scope.message = 'Hello World!';
+  }])
+
 .controller('loginCtrl', function($scope,$rootScope,$ionicHistory,sharedUtils,$state,$ionicSideMenuDelegate) {
     $rootScope.extras = false;  // For hiding the side bar and nav icon
 

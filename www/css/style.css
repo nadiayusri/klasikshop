@@ -7,7 +7,26 @@
     width: 50px;
 }
 
+.login-area{
+    padding :0 40px 40px 40px;
+    background: white;
+    opacity: 0.9;
+}
 
+.sign-up-area{
+    padding : 0 40px 10px 40px;
+    background: white;
+    opacity: 0.9;
+}
+
+.forgot-password-container{
+    display: block;
+    text-align: center;
+}
+
+.forgot-password{
+    color : white !important;
+}
 
 .link {
     color: #116262;
