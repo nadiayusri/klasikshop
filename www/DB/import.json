@@ -1,0 +1,48 @@
+{
+  "category" : {
+    "cat01" : "Burger",
+    "cat02" : "Drinks"
+  },
+  "featured" : {
+    "item1" : "slide_1",
+    "item2" : "slide_2"
+  },
+  "menu" : {
+    "item1" : {
+      "available" : true,
+      "category" : "cat01",
+      "description" : "item1 description",
+      "image" : "sulthan_green",
+      "name" : "The Sulthan - Emerald Green",
+      "price" : 219,
+      "stock" : 18
+    },
+    "item2" : {
+      "available" : true,
+      "category" : "cat01",
+      "description" : "item2 description",
+      "image" : "sulthan_white",
+      "name" : "The Sulthan - White",
+      "price" : 219,
+      "stock" : 3
+    },
+    "item3" : {
+      "available" : true,
+      "category" : "cat02",
+      "description" : "item3 description",
+      "image" : "sulthan_blue",
+      "name" : "The Sulthan - Blue",
+      "price" : 219,
+      "stock" : 10
+    },
+    "item4" : {
+      "available" : true,
+      "category" : "cat02",
+      "description" : "item4 description",
+      "image" : "sulthan_red",
+      "name" : "The Sulthan - Red",
+      "price" : 219,
+      "stock" : 20
+    }
+  }
+}
