@@ -52,6 +52,13 @@
     max-width: 90%;
 }
 
+.note-checkout{
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
 .my-address{
     margin: 20px;
     border-radius: 12px;

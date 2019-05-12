@@ -59,10 +59,8 @@
       </ion-list>
       </div>
 
-      <div ng-controller="LogController">
-        <div ng-init="$log.log('Address : ',$parent.$parent)"></div>
-      </div>
-      {{}}
+      <p class="note-checkout">*Please choose Delivery Address and Mode of Payment to proceed purchases.</p>
+
       <button type="submit" class=" button button-calm  button-block icon-right ion-android-arrow-forward " ng-disabled="addresses.length === 0 || payNow">
         PAY
       </button>

@@ -669,20 +669,26 @@ angular.module('app.controllers', [])
       }
       // An elaborate, custom popup
       var addressPopup = $ionicPopup.show({
-        template: '<input type="text"   placeholder="Nick Name"  ng-model="data.nickname"> <br/> ' +
-        '<input type="text"   placeholder="Address" ng-model="data.address"> <br/> ' +
-        '<input type="number" placeholder="Postcode" ng-model="data.pin"> <br/> ' +
-        '<input type="number" placeholder="Phone" ng-model="data.phone">',
+        template:
+          '<input type="text"   placeholder="Nick Name"  ng-model="data.nickname"> <br/> ' +
+          '<input type="text"   placeholder="Address" ng-model="data.address"> <br/> ' +
+          '<input type="number" placeholder="Postcode (Numeric Only)" ng-model="data.pin"> <br/> ' +
+          '<input type="number" placeholder="Phone (Numeric Only)" ng-model="data.phone">',
         title: title,
         subTitle: sub_title,
         scope: $scope,
         buttons: [
-          { text: 'Close' },
+          { text: "Close"},
           {
-            text: '<b>Save</b>',
-            type: 'button-positive',
+            text: "<b>Save</b>",
+            type: "button-positive",
             onTap: function(e) {
-              if (!$scope.data.nickname || !$scope.data.address || !$scope.data.pin || !$scope.data.phone ) {
+              if (
+                !$scope.data.nickname ||
+                !$scope.data.address ||
+                !$scope.data.pin ||
+                !$scope.data.phone
+              ) {
                 e.preventDefault(); //don't allow the user to close unless he enters full details
               } else {
                 return $scope.data;
