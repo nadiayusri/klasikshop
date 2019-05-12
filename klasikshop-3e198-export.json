@@ -1,0 +1,216 @@
+{
+  
+
+
+  "category" : {
+    "cat01" : "Dress & Jubah",
+    "cat02" : "Baju Kurung",
+    "cat03" : "Baju Melayu"
+  },
+  "featured" : {
+    "item1" : "slide_1",
+    "item2" : "slide_2"
+  },
+  "menu" : {
+    "item001" : {
+      "available" : true,
+      "category" : "cat01",
+      "image" : "jubah_black",
+      "name" : "Carlena - Black",
+      "price" : 299,
+      "stock" : 18,
+      "totalStock" : 20
+    },
+    "item002" : {
+      "available" : true,
+      "category" : "cat01",
+      "image" : "jubah_nude",
+      "name" : "Carlena - Dark Nude",
+      "price" : 299,
+      "stock" : 3,
+      "totalStock" : 20
+    },
+    "item003" : {
+      "available" : true,
+      "category" : "cat01",
+      "image" : "jubah_kuning",
+      "name" : "Larrossa Joobah - Pastel Yellow",
+      "price" : 249,
+      "stock" : 10,
+      "totalStock" : 20
+    },
+    "item004" : {
+      "available" : true,
+      "category" : "cat01",
+      "image" : "jubah_pink",
+      "name" : "Larrossa Joobah - Pastel Pink",
+      "price" : 219,
+      "stock" : 20,
+      "totalStock" : 20
+    },
+  
+      "item005" : {
+      "available" : true,
+      "category" : "cat02",
+      "image" : "kurung_biru",
+      "name" : "Carlena - Blue",
+      "price" : 219,
+      "stock" : 10,
+      "totalStock" : 20
+    },
+    "item006" : {
+      "available" : true,
+      "category" : "cat02",
+      "image" : "kurung_putih",
+      "name" : "Carlena - White",
+      "price" : 219,
+      "stock" : 15,
+      "totalStock" : 20
+    },
+    "item007" : {
+      "available" : true,
+      "category" : "cat02",
+      "image" : "kurung_pink",
+      "name" : "Carlena - Pink",
+      "price" : 219,
+      "stock" : 4,
+      "totalStock" : 20
+    },
+    "item008" : {
+      "available" : true,
+      "category" : "cat02",
+      "image" : "kurung_cair",
+      "name" : "Carlena - Biru Cair",
+      "price" : 219,
+      "stock" : 10,
+      "totalStock" : 20
+    },
+    "item009" : {
+      "available" : true,
+      "category" : "cat03",
+      "image" : "sulthan_green",
+      "name" : "The Sulthan - Green",
+      "price" : 219,
+      "stock" : 20,
+      "totalStock" : 20
+    },
+    "item010" : {
+      "available" : true,
+      "category" : "cat03",
+      "image" : "sulthan_white",
+      "name" : "The Sulthan - White",
+      "price" : 219,
+      "stock" : 15,
+      "totalStock" : 20
+    },
+    "item011" : {
+      "available" : true,
+      "category" : "cat03",
+      "image" : "sulthan_blue",
+      "name" : "The Sulthan - Blue",
+      "price" : 219,
+      "stock" : 10,
+      "totalStock" : 20
+    },
+    "item012" : {
+      "available" : true,
+      "category" : "cat03",
+      "image" : "sulthan_red",
+      "name" : "The Sulthan - Red",
+      "price" : 219,
+      "stock" : 6,
+      "totalStock" : 20
+    }
+  },
+  "orders" : {
+    "-LdzzCjOMHs7hct7xttd" : {
+      "address_id" : "-LdzympQ8hjHGDQH5xy4",
+      "item_qty" : 1,
+      "payment_id" : "COD",
+      "product_id" : "item1",
+      "product_image" : "sulthan_green",
+      "product_name" : "The Sulthan - Emerald Green",
+      "product_price" : 219,
+      "status" : "Queued",
+      "user_id" : "POtkKtYwqpepbywFNG16PAp09fn2",
+      "user_name" : "intan"
+    },
+    "-LdzzCjSvHekYUbAiS02" : {
+      "address_id" : "-LdzympQ8hjHGDQH5xy4",
+      "item_qty" : 1,
+      "payment_id" : "COD",
+      "product_id" : "item3",
+      "product_image" : "sulthan_blue",
+      "product_name" : "The Sulthan - Blue",
+      "product_price" : 219,
+      "status" : "Queued",
+      "user_id" : "POtkKtYwqpepbywFNG16PAp09fn2",
+      "user_name" : "intan"
+    },
+    "-Le-0CLlorWL5G7DtFa0" : {
+      "address_id" : "-LdzympQ8hjHGDQH5xy4",
+      "item_qty" : 1,
+      "payment_id" : "CREDIT",
+      "product_id" : "item3",
+      "product_image" : "sulthan_blue",
+      "product_name" : "The Sulthan - Blue",
+      "product_price" : 219,
+      "status" : "Queued",
+      "user_id" : "POtkKtYwqpepbywFNG16PAp09fn2",
+      "user_name" : "intan"
+    },
+    "-Le0IA6va1fXkflOm8fS" : {
+      "address_id" : "-Le0I6hpJhOdbN7bNRMA",
+      "item_qty" : 1,
+      "payment_id" : "CREDIT",
+      "product_id" : "item4",
+      "product_image" : "sulthan_red",
+      "product_name" : "The Sulthan - Red",
+      "product_price" : 219,
+      "status" : "Queued",
+      "user_id" : "pjobSkxRp1bDeW8mboG27tqP0bp2",
+      "user_name" : "amir"
+    }
+  },
+  "users" : {
+    "POtkKtYwqpepbywFNG16PAp09fn2" : {
+      "address" : {
+        "-LdzympQ8hjHGDQH5xy4" : {
+          "address" : "shah alam",
+          "nickname" : "nadia",
+          "phone" : 133721844,
+          "pin" : 40300
+        }
+      },
+      "telephone" : "nadia"
+    },
+    "pjobSkxRp1bDeW8mboG27tqP0bp2" : {
+      "address" : {
+        "-LdzuiwXoK5TAT6-4NA5" : {
+          "address" : "ll",
+          "nickname" : "ll",
+          "phone" : 999,
+          "pin" : 9
+        },
+        "-Ldzuq2_sZSORkScH6Er" : {
+          "address" : "l'l'",
+          "nickname" : ".'",
+          "phone" : 99,
+          "pin" : 999
+        },
+        "-Le0Ex4Mul6Nig_-NkYH" : {
+          "address" : "ampang",
+          "nickname" : "ema",
+          "phone" : 12,
+          "pin" : 6800
+        },
+        "-Le0I6hpJhOdbN7bNRMA" : {
+          "address" : "Kuala Lumpur",
+          "nickname" : "anne",
+          "phone" : 132276589,
+          "pin" : 41500
+        }
+      }
+    }
+  }
+}
