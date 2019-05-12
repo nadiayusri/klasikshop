@@ -97,6 +97,12 @@ angular.module('app.routes', [])
     controller: 'jubahCtrl'
   })
 
+  .state('melayu', {
+    url: '/page20',
+    templateUrl: 'templates/melayu.html',
+    controller: 'melayuCtrl'
+  })
+
   .state('tabsController.forgotPassword', {
     url: '/page15',
     views: {

@@ -106,7 +106,10 @@ angular.module('app.services', [])
           fireBaseData.refCart().child(uid).child(item.$id).set({    // set
             item_name: item.name,
             item_image: item.image,
+            item_category : item.category,
             item_price: item.price,
+            item_stock : item.stock,
+            item_totalStock : item.totalStock,
             item_qty: 1
           });
         }

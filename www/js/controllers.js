@@ -1,9 +1,8 @@
 angular.module('app.controllers', [])
 
   // for log controller
-  .controller('LogController', ['$scope', '$log', function ($scope, $log) {
+  .controller('LogController', ['$scope', '$log' ,'$interval', function ($scope, $log , $interval) {
     $scope.$log = $log;
-    $scope.message = 'Hello World!';
   }])
 
 .controller('loginCtrl', function($scope,$rootScope,$ionicHistory,sharedUtils,$state,$ionicSideMenuDelegate) {
@@ -17,9 +16,6 @@ angular.module('app.controllers', [])
         $ionicHistory.clearCache();
       }
     });
-
-
-
 
     //Check if user already logged in
     firebase.auth().onAuthStateChanged(function(user) {
@@ -193,19 +189,63 @@ angular.module('app.controllers', [])
     $rootScope.extras=true;
 })
 
-.controller('kurungCtrl', function($scope,$rootScope) {
+  .controller('kurungCtrl', function ($scope, $rootScope,fireBaseData, $firebaseArray , sharedCartService) {
 
     //We initialise it on all the Main Controllers because, $rootScope.extra has default value false
     // So if you happen to refresh the Offer page, you will get $rootScope.extra = false
     //We need $ionicSideMenuDelegate.canDragContent(true) only on the menu, ie after login page
-    $rootScope.extras=true;
+  $rootScope.extras = true;
+
+  $scope.getTitle = function(){
+    $scope.allTitle = $firebaseArray(fireBaseData.refCategory());
+  }
+
+  $scope.loadMenu = function () {
+    $scope.menu = $firebaseArray(fireBaseData.refMenu());
+  }
+
+  $scope.addToCart = function (item) {
+    sharedCartService.add(item);
+  };
 })
 
-.controller('jubahCtrl', function($scope,$rootScope) {
+  .controller('jubahCtrl', function ($scope, $rootScope, fireBaseData, $firebaseArray , sharedCartService) {
 
     //We initialise it on all the Main Controllers because, $rootScope.extra has default value false
     // So if you happen to refresh the Offer page, you will get $rootScope.extra = false
     //We need $ionicSideMenuDelegate.canDragContent(true) only on the menu, ie after login page
+
+  $scope.getTitle = function () {
+    $scope.allTitle = $firebaseArray(fireBaseData.refCategory());
+  }
+
+  $scope.loadMenu = function () {
+    $scope.menu = $firebaseArray(fireBaseData.refMenu());
+  }
+    $rootScope.extras=true;
+
+      $scope.addToCart = function (item) {
+        sharedCartService.add(item);
+      };
+})
+
+  .controller('melayuCtrl', function ($scope, $rootScope, fireBaseData, $firebaseArray , sharedCartService) {
+
+    //We initialise it on all the Main Controllers because, $rootScope.extra has default value false
+    // So if you happen to refresh the Offer page, you will get $rootScope.extra = false
+    //We need $ionicSideMenuDelegate.canDragContent(true) only on the menu, ie after login page
+
+  $scope.getTitle = function () {
+    $scope.allTitle = $firebaseArray(fireBaseData.refCategory());
+  }
+
+  $scope.loadMenu = function () {
+    $scope.menu = $firebaseArray(fireBaseData.refMenu());
+  }
+
+  $scope.addToCart = function (item) {
+    sharedCartService.add(item);
+  };
     $rootScope.extras=true;
 })
 
@@ -422,7 +462,7 @@ angular.module('app.controllers', [])
 
         if(edit_val!=null) {
           //Update  address
-          if(res!=null){ // res ==null  => close 
+          if(res!=null){ // res ==null  => close
             fireBaseData.refUser().child($scope.user_info.uid).child("address").child(edit_val.$id).update({    // set
               nickname: res.nickname,
               address: res.address,
@@ -515,6 +555,8 @@ angular.module('app.controllers', [])
 
     $rootScope.extras=true;
 
+    $scope.payNow = true;
+
     //Check if user already logged in
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
@@ -522,6 +564,25 @@ angular.module('app.controllers', [])
         $scope.user_info=user;
       }
     });
+
+    $scope.addressClick = function(e){
+      $scope.payNow = false;
+    }
+
+    $scope.deleteAddress = function(e){
+      var element = e.currentTarget;
+      fireBaseData.refUser().child($scope.user_info.uid).child("address").once('value',function(snapshot){
+        for(var item in snapshot.val()){
+          if(snapshot.val().hasOwnProperty(item)){
+            if (item === element.parentElement.children[0].children[0].value) {
+            fireBaseData.refUser().child($scope.user_info.uid).child("address").update({
+              [item] : null
+            })
+            }
+          }
+        }
+      })
+    }
 
     $scope.payments = [
       {id: 'CREDIT', name: 'Credit Card'},
@@ -539,6 +600,25 @@ angular.module('app.controllers', [])
         // Loop throw all the cart item
         for (var i = 0; i < sharedCartService.cart_items.length; i++) {
           //Add cart item to order table
+          fireBaseData.refMenu().once('value' , function(snapshot){
+            for(var item in snapshot.val()){
+              if(snapshot.val().hasOwnProperty(item)){
+                var id = sharedCartService.cart_items[i].$id;
+                if(id === item){
+                  fireBaseData.refMenu().child(item).update({
+                      available : true,
+                      category: sharedCartService.cart_items[i].item_category,
+                      image: sharedCartService.cart_items[i].item_image,
+                      price: sharedCartService.cart_items[i].item_price,
+                      stock: sharedCartService.cart_items[i].item_stock - sharedCartService.cart_items[i].item_qty,
+                      totalStock: sharedCartService.cart_items[i].item_totalStock
+                  })
+                }
+              }
+            }
+          })
+
+          var myStatus = ["Packaging" , "Paid" , "Delivered", "On Delivery"];
           fireBaseData.refOrder().push({
 
             //Product data is hardcoded for simplicity
@@ -555,7 +635,7 @@ angular.module('app.controllers', [])
             user_name:$scope.user_info.displayName,
             address_id: address,
             payment_id: payment,
-            status: "Queued"
+            status: "Ordered"
           });
 
         }
@@ -572,7 +652,6 @@ angular.module('app.controllers', [])
         $state.go('lastOrders', {}, {location: "replace", reload: true});
       }
     }
-
 
 
     $scope.addManipulation = function(edit_val) {  // Takes care of address add and edit ie Address Manipulator
@@ -592,7 +671,7 @@ angular.module('app.controllers', [])
       var addressPopup = $ionicPopup.show({
         template: '<input type="text"   placeholder="Nick Name"  ng-model="data.nickname"> <br/> ' +
         '<input type="text"   placeholder="Address" ng-model="data.address"> <br/> ' +
-        '<input type="number" placeholder="Pincode" ng-model="data.pin"> <br/> ' +
+        '<input type="number" placeholder="Postcode" ng-model="data.pin"> <br/> ' +
         '<input type="number" placeholder="Phone" ng-model="data.phone">',
         title: title,
         subTitle: sub_title,
