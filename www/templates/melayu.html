@@ -1,8 +1,7 @@
-<ion-view style="" class=" " id="page7" title="Menu">
+<ion-view style="" class=" " id="page19" title="{{ allTitle[2].$value }}" ng-init="getTitle()">
     <ion-content class="has-header" padding="false"  ng-init="loadMenu()"  >
 
-
-		<div class="row" ng-repeat="item in menu" ng-if="$index % 2 === 0" style="border-top: 1px solid #999;">
+		<div class="row" ng-repeat="item in menu" ng-if="$index % 2 === 0  && menu[$index].category === 'cat03'" style="border-top: 1px solid #999;">
 
 
 			<div class="col col-50 " ng-if="$index < menu.length" style="padding:1px;border-right:1px solid #999" >

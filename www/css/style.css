@@ -7,6 +7,7 @@
     width: 50px;
 }
 
+/* Login & Sign Up CSS */
 .login-area{
     padding :0 40px 40px 40px;
     background: white;
@@ -26,6 +27,109 @@
 
 .forgot-password{
     color : white !important;
+}
+
+/* Progress CSS */
+
+.progress-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-area{
+    flex: 1;
+}
+
+.progress{
+    margin : 0 !important;
+}
+
+/* Checkout */
+.my-address{
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: -1px 2px 8px 2px gainsboro;
+    max-width: 90%;
+}
+
+.my-address{
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: -1px 2px 8px 2px gainsboro;
+    max-width: 90%;
+}
+
+.address-title{
+    font-weight: bold;
+    padding: 20px;
+    font-size: 21px;
+}
+
+.address-nickname{
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.wrapper-list{
+    padding: 20px;
+    background: #f7f7f7 !important;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.address-address{
+  font-size: 12px;
+  font-style: italic;
+}
+
+.delivery-address-area{
+  margin : 0 0 20px 0;
+}
+
+.payment-area{
+  margin : 0 0 20px 0;
+}
+
+.delete-address{
+  margin-left:8%;
+}
+
+@keyframes clickCart{
+  0%{
+    background: black;
+    border-radius: 20%;
+    opacity : 0;
+  }
+
+  50%{
+    background: black;
+    border-radius: 20%;
+    opacity : 1;
+  }
+
+  100%{
+        background: black;
+        border-radius: 20%;
+        opacity : 0;
+  }
+}
+
+.ion-icon-cart:before:focus{
+  animation : clickCart 1s ease forwards;
+}
+
+.label-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkout-area{
+  padding:20px;
+}
+
+.stock-text{
+    font-size: 10px !important;
+    font-weight: bold;
 }
 
 .link {
